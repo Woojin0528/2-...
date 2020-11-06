@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="timerstyle.css">
+    <title>Timer</title>
+</head>
+<body>
+    <input type="button" value="START" onclick="startFnc()"/>
+    <input type="button" value="STOP" onclick="stopFnc()"
+
+    <div class="display">00:00</div>
+
+    <script>
+        let displaysecond=0;
+        let displayminute=0;
+
+        let sec=0;
+        let min=0;
+
+        function startFnc() {
+            sec++ ;
+
+            if(sec/60===1){
+                sec=0;
+                min++;
+            }
+
+                if(sec<10){
+                    displaysecond="0"+sec.toString();
+                }
+                else{
+                    displaysecond=sec.toString();
+                }
+                if(min<10){
+                    displayminute="0"+min.toString();
+                }
+                else{
+                    displayminute=min.toString();
+                }
+                
+            document.getElementById("display").innerHTML = displayminute +":"+ displaysecond;
+        }
+        window.setInterval(startFnc,1000)
+    </script>
+</body>
+</html>
